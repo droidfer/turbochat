@@ -1,0 +1,27 @@
+<div class="mx-auto md:w-2/3 w-full flex">
+  <div class="mx-auto">
+    <% if notice.present? %>
+      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+    <% end %>
+
+    <%= render @room %>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Messages:</strong>    
+  </p>
+
+
+    <div id="messages" class="mb-10">
+      <%= render @room.messages %>
+    </div>
+
+    <%= link_to 'New Message', new_room_message_path(@room), class: "ml-2 rounded-lg py-3 px-5 bg-blue-100 inline-block font-medium" %>
+
+    <%= link_to "Edit this room", edit_room_path(@room), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <div class="inline-block ml-2">
+      <%= button_to "Destroy this room", room_path(@room), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+    </div>
+    <%= link_to "Back to rooms", rooms_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+
+  </div>
+</div>
