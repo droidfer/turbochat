@@ -15,7 +15,9 @@
         <%= render @room.messages %>
       </div>
 
-      <%= link_to 'New Message', new_room_message_path(@room), class: "rounded-md py-1 px-3 bg-transparent hover:bg-indigo-500 text-indigo-500 hover:text-white text-sm border border-indigo-500" %>
+      <%= turbo_frame_tag "message" do %>
+        <%= link_to 'New Message', new_room_message_path(@room), class: "rounded-md py-1 px-3 bg-transparent hover:bg-indigo-500 text-indigo-500 hover:text-white text-sm border border-indigo-500" %>
+      <% end %>
     </div>
 
       

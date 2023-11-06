@@ -11,11 +11,8 @@
     </div>
   <% end %>
 
-  <div class="my-5">
-    <%= form.text_field :name, class: "block shadow rounded-md border border-indigo-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-  <div class="inline">
-    <%= form.submit class: "rounded-lg py-3 px-5 bg-indigo-600 text-white inline-block font-medium cursor-pointer" %>
+<div class="flex space-x-3 mb-3">
+      <%= form.text_field :name, class: "block shadow rounded-md border border-indigo-200 outline-none px-3 py-2 w-full" %>
+      <%= form.submit class: "rounded-lg px-5 py-2 text-indigo-500 border border-indigo-500 bg-indigo-100 cursor-pointer" %>
   </div>
 <% end %>
