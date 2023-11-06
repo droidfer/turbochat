@@ -1,3 +1,11 @@
 <p id="#{dom_id message}">
-    <%= message.created_at.to_s %> <%= message.content%>
+    <div class="flex space-x-3 mb-2">
+        <div class="bg-indigo-200 px-3 rounded-full text-white">
+            <%= message.created_at.to_formatted_s(:short) %>
+        </div>
+
+        <div>
+            <%= message.content%>
+        </div>
+    </div>
 </p>

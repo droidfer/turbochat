@@ -11,8 +11,8 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+  <body class="bg-indigo-50 bg-repeat" style="background-image: url(<%= image_url('letters.png')%>)">
+    <main class="container mx-full mt-5 px-5 flex">
       <%= yield %>
     </main>
   </body>

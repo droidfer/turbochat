@@ -1,25 +1,20 @@
 class RoomsController < ApplicationController
   before_action :set_room, only: %i[ show edit update destroy ]
 
-  # GET /rooms or /rooms.json
   def index
     @rooms = Room.all
   end
 
-  # GET /rooms/1 or /rooms/1.json
   def show
   end
 
-  # GET /rooms/new
   def new
     @room = Room.new
   end
 
-  # GET /rooms/1/edit
   def edit
   end
 
-  # POST /rooms or /rooms.json
   def create
     @room = Room.new(room_params)
 
@@ -34,7 +29,6 @@ class RoomsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /rooms/1 or /rooms/1.json
   def update
     respond_to do |format|
       if @room.update(room_params)
@@ -47,14 +41,16 @@ class RoomsController < ApplicationController
     end
   end
 
-  # DELETE /rooms/1 or /rooms/1.json
   def destroy
     @room.destroy
 
     respond_to do |format|
-      format.html { redirect_to rooms_url, notice: "Room was successfully destroyed." }
+      format.html { redirect_to rooms_url, error: "Room was successfully destroyed." }
       format.json { head :no_content }
     end
+
+  rescue
+    redirect_to rooms_url, notice: "Room couldn't be destroyed." 
   end
 
   private
