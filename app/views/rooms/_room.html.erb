@@ -3,17 +3,11 @@
 <%= turbo_frame_tag "room" do %>
   <div class="flex justify-between mb-3">
     <div class="flex flex-row space-x-3">
-        <strong class="block font-medium mb-1"><%= room.name %></strong>   
-        <% if action_name == "index" %>
-          <%= link_to "Enter", room, "data-turbo-frame": "_top", class: "rounded-md py-1 px-3 bg-transparent hover:bg-indigo-500 text-indigo-500 hover:text-white text-sm border border-indigo-500" %>
-        <% end %>
+      <%= link_to room.name, room, "data-turbo-frame": "_top", class: "rounded-md py-1 px-3 hover:bg-transparent bg-indigo-500 hover:text-indigo-500 text-white text-sm border border-indigo-500" %>
     </div>
 
     <div class="flex space-x-3">
         <%= link_to "Edit #{room.name}", edit_room_path(room),class: "rounded-md py-1 px-3 bg-transparent hover:bg-indigo-500 text-indigo-500 hover:text-white text-sm border border-indigo-500"  %>
-        <% if action_name == "index" %>
-          <%= button_to "Delete", room_path(room), method: :delete, "data-turbo-frame": "_top", class: "rounded-md py-1 px-3 bg-transparent hover:bg-indigo-500 text-indigo-500 hover:text-white text-sm border border-indigo-500"  %>
-         <% end %>
     </div>
   </div>
 <% end %>
