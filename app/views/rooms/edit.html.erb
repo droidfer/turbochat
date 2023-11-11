@@ -3,8 +3,8 @@
 
   <%= turbo_frame_tag "room" do %>
     <%= render "form", room: @room %>
+    <%= link_to "...back", @room, class: "ml-2 rounded-lg py-1 px-5 bg-gray-100 inline-block border border-black font-medium mb-3" %>  
   <% end %>
 
-  <%= link_to "Show this room", @room, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
   <%= link_to "Back to rooms", rooms_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
 </div>
