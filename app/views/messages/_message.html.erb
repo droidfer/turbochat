@@ -4,6 +4,9 @@
             <%= message.created_at.to_formatted_s(:short) %>
         </div>
 
+        <div class="bg-indigo-400 px-3 rounded-full text-white">
+            <%= message.user.email %>
+        </div>
         <div>
             <%= message.content%>
         </div>

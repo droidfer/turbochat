@@ -6,7 +6,9 @@ class MessagesController < ApplicationController
     end
   
     def create
-      @message = @room.messages.create!(message_params)
+      @message = @room.messages.new(message_params)
+      @message.user_id = current_user.id
+      @message.save
   
       respond_to do |format|
           format.turbo_stream
