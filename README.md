@@ -1,12 +1,14 @@
 # TURBOCHAT
-This is an implementation of the video Hotwire:The Demo (https://www.youtube.com/watch?v=eKY-QES1XQQ) setting Tailwind 
-The chat is a combinantion of Rooms to chat, and the message itself
 
-# HOTWIRE
-Code includes this Hotwire technologies:
+Turbo chat is a chatting platform based on Hotwire. The project was inspired by the Hotwire video tutorial:The Demo (https://www.youtube.com/watch?v=eKY-QES1XQQ), and from that setting, build up a more extense chatting application
+
+At the curren version, the chat includes rooms and message that are generated according creation
+
+# TECHNOLOGY STACK
+
+- Rails 7
 - Turbo
 - Stimulus
-- Action Cables
-
-# FE
-FrontEnd is manage completely by TailwindCSS
+- Action Cable
+- Taiwlind CSS
+- Devise

@@ -12,7 +12,16 @@
   </head>
 
   <body class="bg-indigo-50 bg-repeat" style="background-image: url(<%= image_url('letters.png')%>)">
-    <main class="container mx-full mt-5 px-5 flex">
+    
+    <% if user_signed_in? %>
+      <div class="w-full flex justify-between px-5 bg-indigo-400 py-2">
+        <div class="text-white"><%= current_user.email %></div>
+        <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "text-white border border-white px-5 rounded-full hover:bg-indigo-600" %>        
+      </div>
+    <% end %>
+    
+
+    <main class="mt-5 px-5 flex">
       <%= yield %>
     </main>
   </body>
