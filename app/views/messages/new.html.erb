@@ -9,10 +9,13 @@
 
 
     <div class="flex flex-row space-x-3">
-        <%= form.text_field :content, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 w-full" %>
-        <%= form.submit class: "rounded-lg py-3 px-5 bg-indigo-600 text-white inline-block font-medium cursor-pointer" %>
-      </div>
+      <%= form.text_field :content, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 w-full" %>
+      <%= form.submit class: "rounded-lg py-3 px-5 bg-indigo-600 text-white inline-block font-medium cursor-pointer" %>
+    </div>
 
+    <div class="field text-sm mt-2">
+      <%= form.file_field :image %>
+    </div>
     <% end %>
   <% end %>
 
