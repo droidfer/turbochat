@@ -2,9 +2,11 @@ import { Controller } from "@hotwired/stimulus";
 import { DirectUpload } from "https://cdn.skypack.dev/@rails/activestorage";
 
 export default class extends Controller {
-  static targets = ["input", "image"];
+  static targets = ["image", "input", "textField"];
 
-  connect() {}
+  connect() {
+    this.imageTarget.style.visibility = "hidden";
+  }
 
   changed() {
     Array.from(this.inputTarget.files).forEach((file) => {
@@ -32,6 +34,22 @@ export default class extends Controller {
       );
     }
     return this._hiddenInput;
+  }
+
+  reset() {
+    // Hide Preview
+    this.imageTarget.setAttribute("src", "");
+    this.imageTarget.style.visibility = "hidden";
+
+    // Reset InputImage and InputContent field
+    this.inputTarget.value = "";
+    this.textFieldTarget.value = "";
+
+    // Remove temporal image upload
+    const hiddenImage = document.getElementById("hiddenImageUpload");
+    if (hiddenImage !== null) {
+      hiddenImage.remove();
+    }
   }
 
   postURL() {

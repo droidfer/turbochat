@@ -5,20 +5,20 @@
   <h1 class="font-bold text-4xl text-indigo-600">New Message</h1>
 
   <%= turbo_frame_tag "message" do %>
-    <%= form_with(model: [@message.room, @message] , data: {controller: "newmsq", action: "turbo:submit-end->newmsq#reset"}) do |form| %>
+    <%= form_with(model: [@message.room, @message] , data: {controller: "instant-upload", action: "turbo:submit-end->instant-upload#reset"}) do |form| %>
 
       <div class="flex flex-row space-x-3">
-        <%= form.text_field :content, 'data-newmsq-target': 'textField', class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 w-full" %>
+        <%= form.text_field :content, 'data-instant-upload-target': 'textField', class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 w-full" %>
         <%= form.submit class: "rounded-lg py-3 px-5 bg-indigo-600 text-white inline-block font-medium cursor-pointer" %>
       </div>
 
-      <div class="field text-sm mt-2" data-controller='instant-upload'>
-        <%= form.file_field :image, 'data-newmsq-target': 'input', 'data-instant-upload-target': 'input',
+      <div class="field text-sm mt-2">
+        <%= form.file_field :image, 'data-instant-upload-target': 'input', 'data-instant-upload-target': 'input',
             'data-action': 'instant-upload#changed' %>
 
         <p>
 
-        <%= content_tag :img, nil, src: nil, width: 100, height: 100, 'data-newmsq-target': 'image',
+        <%= content_tag :img, nil, src: nil, width: 100, height: 100, 'data-instant-upload-target': 'image',
               'data-instant-upload-target': 'image' unless @message.image.attached? %>
       </p>
       </div>
