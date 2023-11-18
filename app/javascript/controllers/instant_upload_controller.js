@@ -23,6 +23,7 @@ export default class extends Controller {
   hiddenInput() {
     if (this._hiddenInput == undefined) {
       this._hiddenInput = document.createElement("input");
+      this._hiddenInput.id = "hiddenImageUpload";
       this._hiddenInput.name = this.inputTarget.name;
       this._hiddenInput.type = "hidden";
       this.inputTarget.parentNode.insertBefore(
