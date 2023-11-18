@@ -1,11 +1,15 @@
 import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
+  static targets = ["image"];
+
   connect() {
-    console.log("CONNECT");
+    this.imageTarget.style.visibility = "hidden";
   }
 
   reset() {
-    this.element.reset();
+    this.element.reset;
+    this.imageTarget.setAttribute("src", "");
+    this.imageTarget.style.visibility = "hidden";
   }
 }

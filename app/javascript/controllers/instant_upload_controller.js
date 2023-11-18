@@ -16,6 +16,8 @@ export default class extends Controller {
         }`;
       });
     });
+
+    this.imageTarget.style.visibility = "visible";
   }
 
   hiddenInput() {

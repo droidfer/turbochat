@@ -18,10 +18,10 @@
 
         <p>
         <%= image_tag @message.image.variant(resize_to_limit: [100, 100]),
-              width: 100, height: 100,
+              width: 100, height: 100, 'data-newmsq-target': 'image',
               'data-instant-upload-target': 'image' if @message.image.attached? %>
 
-        <%= content_tag :img, nil, src: nil, width: 100, height: 100,
+        <%= content_tag :img, nil, src: nil, width: 100, height: 100, 'data-newmsq-target': 'image',
               'data-instant-upload-target': 'image' unless @message.image.attached? %>
       </p>
       </div>
