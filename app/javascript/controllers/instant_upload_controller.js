@@ -1,5 +1,5 @@
 import { Controller } from "@hotwired/stimulus";
-import { DirectUpload } from "https://cdn.skypack.dev/@rails/activestorage";
+import { DirectUpload } from "https://cdn.skypack.dev/pin/@rails/activestorage@v7.1.2-mMfISpKfx80eNgqlgnDN/mode=imports/optimized/@rails/activestorage.js";
 
 export default class extends Controller {
   static targets = ["image", "input", "textField"];
