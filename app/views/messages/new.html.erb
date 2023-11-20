@@ -13,8 +13,7 @@
       </div>
 
       <div class="field text-sm mt-2">
-        <%= form.file_field :image, 'data-instant-upload-target': 'input', 'data-instant-upload-target': 'input',
-            'data-action': 'instant-upload#changed' %>
+        <%= form.file_field :image, accept:'image/*' , 'data-instant-upload-target': 'input', 'data-action': 'instant-upload#changed' %>
 
         <p>
 
