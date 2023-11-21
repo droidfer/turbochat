@@ -1,15 +1,10 @@
-<p id="#{dom_id message}">
-    <div class="flex space-x-3 mb-2">
-        <div class="basis-2/12">
-            <div class="bg-indigo-200 px-3 rounded-full text-white ">
-                <%= message.created_at.to_formatted_s(:short) %>
-            </div>
-        </div>
-
-        <div class="basis-2/12">
+<div id="#{dom_id message}" class="w-full flex <%= current_user.id == message.user.id ? 'justify-end' : '' %>">
+    <div class="flex <%= current_user.id == message.user.id ? 'flex-row-reverse' : '' %> space-x-3 mb-2">
+        <div class="basis-2/12 <%= current_user.id == message.user.id ? 'ml-10' : '' %>">
             <div class="bg-indigo-400 px-3 rounded-full text-white">
                 <%= message.user.email %>
             </div>
+            <font size="0.2">  <%= message.created_at.to_formatted_s(:short) %> </font>  
         </div>
 
         <div class="basis-10/12">
@@ -18,6 +13,7 @@
             <% if message.image.attached? %>
                 <%= image_tag(message.image, style:'width: 100px')%>
             <% end%>
+ 
         </div>
     </div>
-</p>
+</div>
