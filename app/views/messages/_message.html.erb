@@ -1,6 +1,6 @@
-<div id="#{dom_id message}" class="w-full flex <%= current_user.id == message.user.id ? 'justify-end' : '' %>">
-    <div class="flex <%= current_user.id == message.user.id ? 'flex-row-reverse' : '' %> space-x-3 mb-2">
-        <div class="basis-2/12 <%= current_user.id == message.user.id ? 'ml-10' : '' %>">
+<div id=<%="message_#{dom_id message}"%> class="w-full flex <%=  user&.id == message.user.id ? 'justify-end' : '' %>">
+    <div class="flex <%=  defined?(user) && user&.id == message.user.id ? 'flex-row-reverse' : '' %> space-x-3 mb-2">
+        <div class="basis-2/12 <%=  defined?(user) && user&.id == message.user.id ? 'ml-10' : '' %>">
             <div class="bg-indigo-400 px-3 rounded-full text-white">
                 <%= message.user.email %>
             </div>
