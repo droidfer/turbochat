@@ -1,6 +1,6 @@
-<div id=<%="message_#{dom_id message}"%> class="w-full flex <%=  user&.id == message.user.id ? 'justify-end' : '' %>">
-    <div class="flex <%=  defined?(user) && user&.id == message.user.id ? 'flex-row-reverse' : '' %> space-x-3 mb-2">
-        <div class="basis-2/12 <%=  defined?(user) && user&.id == message.user.id ? 'ml-10' : '' %>">
+<div id=<%="message_#{dom_id message}"%> class="w-full flex">
+    <div id=<%="message_#{dom_id message}_container"%> class="space-x-3 mb-2 flex ">
+        <div id=<%="message_#{dom_id message}_usertag"%> class="basis-2/12">
             <div class="bg-indigo-400 px-3 rounded-full text-white">
                 <%= message.user.email %>
             </div>
@@ -16,4 +16,19 @@
  
         </div>
     </div>
+
+    <script> 
+        if(document.getElementById("session_set").innerHTML == <%= message.user.id %>) {
+            let msgPartial = <%="message_#{dom_id message}"%>;
+            msgPartial.classList.add("justify-end");
+
+            let msgPartialContainer = <%="message_#{dom_id message}_container"%>;
+            msgPartialContainer.classList.add("flex-row-reverse");
+
+            let msgPartialUsertag = <%="message_#{dom_id message}_usertag"%>;
+            msgPartialUsertag.classList.add("ml-10");
+
+        }
+    </script>
+
 </div>
