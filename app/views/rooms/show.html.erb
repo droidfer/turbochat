@@ -16,7 +16,7 @@
 
     <div class="bg-indigo-50 border border-indigo-500 p-3 rounded">
       <div id="messages" class="mb-10">
-        <%= render @room.messages , user: current_user %>
+        <%= render @room.messages %>
       </div>
 
       <%= turbo_frame_tag "message" do %>

@@ -5,11 +5,6 @@ class Message < ApplicationRecord
 
   has_one_attached :image
 
-  after_create_commit { broadcast_to_room }
+  broadcasts_to :room
 
-  private
-  def broadcast_to_room
-    broadcast_append_to room, target: 'messages', partial: 'messages/message', 
-                         locals: { message: self, user: }
-  end
 end
